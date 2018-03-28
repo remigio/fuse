@@ -1,0 +1,53 @@
+<table>
+    <tr>
+        <td><b>Context: </b></td><td>{{data['@context']}}</td>
+    </tr>
+    <tr>
+        <td><b>Id: </b></td><td>{{data['@id']}}</td>
+    </tr>
+    <tr>
+        <td><b>Type: </b></td><td>{{data['@type']}}</td>
+    </tr>
+</table>
+<br>
+<br>
+<h3>Hydra member</h3>
+<br>
+<br>
+<div *ngIf="data">
+    <div *ngFor="let member of data['hydra:member']">
+        <table>
+            <tr>
+                <td><b>Id: </b></td><td>{{member['@id']}}</td>
+            </tr>
+            <tr>
+                <td><b>Type: </b></td><td>{{member['@type']}}</td>
+            </tr>
+            <tr>
+                <td><b>Aggiorna: </b></td><td>{{member.aggiorna}}</td>
+            </tr>
+            <tr>
+                <td><b>Cod ruolo: </b></td><td>{{member.codruolo}}</td>
+            </tr>
+            <tr>
+                <td><b>Crea: </b></td><td>{{member.crea}}</td>
+            </tr>
+            <tr>
+                <td><b>Descrizione: </b></td><td>{{member.descrizione}}</td>
+            </tr>
+            <tr>
+                <td><b>Elimina: </b></td><td>{{member.elimina}}</td>
+            </tr>
+            <tr>
+                <td><b>Vista: </b></td><td>{{member.vista}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<table>
+    <tr>
+        <td><b>Hydra total items: </b></td><td>{{data['hydra:totalItems']}}</td>
+    </tr>
+</table>
