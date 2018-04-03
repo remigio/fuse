@@ -11,8 +11,8 @@ export class OperatoriService implements Resolve<any>
     onOperatorisChanged: BehaviorSubject<any> = new BehaviorSubject({});
 
     constructor(
-        private http: HttpClient,
-       // private httpClient: HttpClient
+//        private http: HttpClient,
+        private httpClient: HttpClient
     )
     {
     }
@@ -52,18 +52,19 @@ export class OperatoriService implements Resolve<any>
                 }, reject);*/
 
             //prova con fake db
-            this.http.get('api/operatori')
-                .subscribe((response: any) => {
-                    this.operatori = response;
-                    this.onOperatorisChanged.next(this.operatori);
-                    resolve(response);
-                }, reject);
+//            this.http.get('api/operatori')
+//                .subscribe((response: any) => {
+//                    this.operatori = response;
+//                    this.onOperatorisChanged.next(this.operatori);
+//                    resolve(response);
+//                }, reject);
 
             //prova con chiamata httpClient
-           /* this.httpClient.get('http://80.22.246.138:50480/api/operatoris').subscribe((data: any) => {
+           this.httpClient.get('http://80.22.246.138:50480/api/operatoris').subscribe((data: any) => {
                 this.operatori = data['hydra:member'];
                 this.onOperatorisChanged.next(this.operatori);
-                });*/
+                resolve(this.operatori);
+                });
                 
         });
 

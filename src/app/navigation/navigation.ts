@@ -81,7 +81,7 @@ export const navigation = [
                                 'id'   : 'operatori',
                                 'title': 'Operatori',
                                 'type' : 'item',
-                                'url'  : '/apps/pannello/gestione_operatori/operatori'
+                                'url'  : '/apps/pannello/operatori'
                             },
                             {
                                 'id'   : 'ruoli',
