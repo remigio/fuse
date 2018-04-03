@@ -1,0 +1,55 @@
+export class OperatoriFakeDb
+{
+    public static operatori = [
+        {
+            '@id':'/api/operatoris/2',
+            '@type':'Operatori',
+            'nomeoperatore':'admin',
+            'cognomeoperatore':'Zapp',
+            'operatoreattivo':true,
+            'dataattivazione':null,
+            'datadisattivazione':null,
+            'username':'admin',
+            'password':'$2y$13$FI5BwbyKWpDX5emB9AQ5Ne3Y4/ba2FJ8ELgQMtGtQkzp1SYiHriKm',
+            'badge':'',
+            'pin':'1234',
+            'codoperatore':2,
+            'rifgruppoclienti':'/api/gruppiclientis/1',
+            'email':'admin@admin.it',
+            'roles':[
+                'ROLE_ADMIN'
+            ],
+            'salt':null,
+            'online':null,
+            'rifrepartoproduttivo':null,
+            'rifubicazioniproduttive':null,
+            'rifruolo':'/api/ruolis/1',
+            'token':null
+        },
+        {
+            '@id':'/api/operatoris/3',
+            '@type':'Operatori',
+            'nomeoperatore':'Mario',
+            'cognomeoperatore':'Rossi',
+            'operatoreattivo':true,
+            'dataattivazione':'2017-01-01T00:00:00+01:00',
+            'datadisattivazione':null,
+            'username':'mario.rossi',
+            'password':'$2y$13$FBiVWitsMiXsvK0KLBfoA..Hy0tz14.4aywKSgLoV30K5ouiadnmq',
+            'badge':null,
+            'pin':'1828',
+            'codoperatore':3,
+            'rifgruppoclienti':'/api/gruppiclientis/1',
+            'email':'mario.rossi@admin.it',
+            'roles':[
+                'ROLE_USER'
+            ],
+            'salt':null,
+            'online':false,
+            'rifrepartoproduttivo':null,
+            'rifubicazioniproduttive':null,
+            'rifruolo':'/api/ruolis/1',
+            'token':null
+        }
+    ]
+}

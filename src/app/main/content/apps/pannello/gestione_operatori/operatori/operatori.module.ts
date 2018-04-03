@@ -1,25 +1,30 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { CdkTableModule } from '@angular/cdk/table';
+
 import { MatButtonModule, MatChipsModule, MatFormFieldModule, MatIconModule, MatInputModule, MatPaginatorModule, MatRippleModule, MatSelectModule, MatSortModule, MatTableModule, MatTabsModule } from '@angular/material';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { CdkTableModule } from '@angular/cdk/table';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
 
-import { RolesComponent } from './roles.component';
+import { FuseOperatoriComponent } from './operatori.component';
+import { OperatoriService } from './operatori.service';
 
-const routes = [
+const routes: Routes = [
     {
-        path     : 'roles',
-        component: RolesComponent
+        path     : 'operatori',
+        component: FuseOperatoriComponent,
+        resolve  : {
+            data: OperatoriService
+        }
     }
 ];
 
 @NgModule({
     declarations: [
-        RolesComponent
+        FuseOperatoriComponent
     ],
     imports     : [
         RouterModule.forChild(routes),
@@ -36,12 +41,17 @@ const routes = [
         MatSortModule,
         MatTableModule,
         MatTabsModule,
+
         NgxChartsModule,
+        
 
         FuseSharedModule,
         FuseWidgetModule,
+    ],
+    providers   : [
+        OperatoriService
     ]
 })
-export class RolesModule
+export class FuseOperatoriModule
 {
 }

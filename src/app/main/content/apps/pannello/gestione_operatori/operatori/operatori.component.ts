@@ -11,35 +11,37 @@ import 'rxjs/add/observable/fromEvent';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
+
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { EcommerceProductsService } from './products.service';
+import { OperatoriService } from './operatori.service';
 
 @Component({
-    selector   : 'fuse-e-commerce-products',
-    templateUrl: './products.component.html',
-    styleUrls  : ['./products.component.scss'],
+    selector   : 'fuse-operatori',
+    templateUrl: './operatori.component.html',
+    styleUrls  : ['./operatori.component.scss'],
     animations : fuseAnimations
 })
-export class FuseEcommerceProductsComponent implements OnInit
+export class FuseOperatoriComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'image', 'name', 'category', 'price', 'quantity', 'active'];
+    displayedColumns = ['nomeoperatore', 'cognomeoperatore', 'username', 'email', 'operatoreattivo'];
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild('filter') filter: ElementRef;
     @ViewChild(MatSort) sort: MatSort;
 
     constructor(
-        private productsService: EcommerceProductsService
+        private operatoriService: OperatoriService
     )
     {
+       
     }
 
     ngOnInit()
     {
-        this.dataSource = new FilesDataSource(this.productsService, this.paginator, this.sort);
+        this.dataSource = new FilesDataSource(this.operatoriService, this.paginator, this.sort);
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
                   .debounceTime(150)
                   .distinctUntilChanged()
@@ -79,28 +81,27 @@ export class FilesDataSource extends DataSource<any>
     }
 
     constructor(
-        private productsService: EcommerceProductsService,
+        private operatoriService: OperatoriService,
         private _paginator: MatPaginator,
         private _sort: MatSort
     )
     {
         super();
-        this.filteredData = this.productsService.products;
-        
+        this.filteredData = this.operatoriService.operatori;
     }
 
     /** Connect function called by the table to retrieve one stream containing the data to render. */
     connect(): Observable<any[]>
     {
         const displayDataChanges = [
-            this.productsService.onProductsChanged,
+            this.operatoriService.onOperatorisChanged,
             this._paginator.page,
             this._filterChange,
             this._sort.sortChange
         ];
 
         return Observable.merge(...displayDataChanges).map(() => {
-            let data = this.productsService.products.slice();
+            let data = this.operatoriService.operatori.slice();
 
             data = this.filterData(data);
 
@@ -162,8 +163,9 @@ export class FilesDataSource extends DataSource<any>
             return (valueA < valueB ? -1 : 1) * (this._sort.direction === 'asc' ? 1 : -1);
         });
     }
-
     disconnect()
     {
     }
+
+   
 }

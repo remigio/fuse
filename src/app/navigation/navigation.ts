@@ -35,6 +35,136 @@ export const navigation = [
                 'icon'     : 'today',
                 'url'      : '/apps/calendar'
             },
+
+            {
+                'id'       : 'pannello',
+                'title'    : 'Pannello di Controllo',
+                'translate': 'NAV.PANNELLO',
+                'type'     : 'collapse',
+                'icon'     : 'receipt',
+                'children' : [
+                    {
+                        'id'   : 'parametri',
+                        'title': 'Parametri',
+                        'type' : 'item',
+                        'url'  : '/apps/pannello/parametri'
+                    },
+                    {
+                        'id'       : 'menu',
+                        'title'    : 'Menu',
+                        'translate': 'NAV.MENU',
+                        'type'     : 'collapse',
+                        'icon'     : 'receipt',
+                        'children' : [
+                            {
+                                'id'   : 'menu_standard',
+                                'title': 'Menu Standard',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/menu/menu_standard'
+                            },
+                            {
+                                'id'   : 'menu_operatore',
+                                'title': 'Menu Operatore',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/menu/menu_operatore'
+                            }
+                        ]
+                    },
+                    {
+                        'id'       : 'gestione_operatori',
+                        'title'    : 'Gestione Operatori',
+                        'translate': 'NAV.GESTIONEOPERATORI',
+                        'type'     : 'collapse',
+                        'icon'     : 'receipt',
+                        'children' : [
+                            {
+                                'id'   : 'operatori',
+                                'title': 'Operatori',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/gestione_operatori/operatori'
+                            },
+                            {
+                                'id'   : 'ruoli',
+                                'title': 'Ruoli',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/gestione_operatori/ruoli'
+                            }
+                        ]
+                    },
+                    {
+                        'id'       : 'gestione_analisi',
+                        'title'    : 'Gestione Analisi',
+                        'translate': 'NAV.GESTIONEANALISI',
+                        'type'     : 'collapse',
+                        'icon'     : 'receipt',
+                        'children' : [
+                            {
+                                'id'   : 'costruttore_analisi',
+                                'title': 'Costruttore Analisi',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/gestione_analisi/costruttore_analisi'
+                            }
+                        ]
+                    },
+                    {
+                        'id'       : 'dispositivi',
+                        'title'    : 'Dispositivi',
+                        'translate': 'NAV.DISPOSITIVI',
+                        'type'     : 'collapse',
+                        'icon'     : 'receipt',
+                        'children' : [
+                            {
+                                'id'   : 'gestione_dispositivi',
+                                'title': 'Gestione Dispositivi',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/dispositivi/gestione_dispositivi'
+                            },
+                            {
+                                'id'   : 'stati_dispositivo',
+                                'title': 'Stati Dispositivo',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/dispositivi/stati_dispositivo'
+                            },
+                            {
+                                'id'   : 'tipo_dispositivo',
+                                'title': 'Tipo dispositivo',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/dispositivi/tipo_dispositivo'
+                            }
+                        ]
+                    },
+                    {
+                        'id'       : 'tabelle',
+                        'title'    : 'Tabelle',
+                        'translate': 'NAV.TABELLE',
+                        'type'     : 'collapse',
+                        'icon'     : 'receipt',
+                        'children' : [
+                            {
+                                'id'   : 'causali',
+                                'title': 'Causali',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/tabelle/causali'
+                            },
+                            {
+                                'id'   : 'magazzini',
+                                'title': 'Magazzini',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/tabelle/magazzini'
+                            },
+                            {
+                                'id'   : 'unita_di_misura',
+                                'title': 'Unità di misura',
+                                'type' : 'item',
+                                'url'  : '/apps/pannello/tabelle/unita_di_misura'
+                            }
+                        ]
+                    },
+                    
+                    
+                ]
+            },
+
             {
                 'id'       : 'e-commerce',
                 'title'    : 'E-Commerce',

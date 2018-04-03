@@ -68,6 +68,7 @@ export class FuseLoginComponent implements OnInit {
     login(): void {
         this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(() => {
             this.router.navigate(['/pages/roles']);
+          
         });
     }
 }

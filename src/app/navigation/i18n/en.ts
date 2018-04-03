@@ -5,6 +5,13 @@ export const locale = {
             'APPLICATIONS': 'Applications',
             'DASHBOARDS'  : 'Dashboards',
             'CALENDAR'    : 'Calendar',
+            'OPERATORI'   : 'Operatori',
+            'PANNELLO'    : 'Pannello di Controllo',
+            'MENU'        : 'Menu',
+            'GESTIONEOPERATORI'        : 'Gestione Operatori',
+            'GESTIONEANALISI'        : 'Gestione Analisi',
+            'DISPOSITIVI'        : 'Dispositivi',
+            'TABELLE'        : 'Tabelle',
             'ECOMMERCE'   : 'E-Commerce',
             'ACADEMY'     : 'Academy',
             'MAIL'        : {

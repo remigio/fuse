@@ -5,6 +5,13 @@ export const locale = {
             'APPLICATIONS': 'Programlar',
             'DASHBOARDS'  : 'Kontrol Paneli',
             'CALENDAR'    : 'Takvim',
+            'OPERATORI'   : 'Operatori',
+            'PANNELLO'    : 'Pannello di Controllo',
+            'MENU'        : 'Menu',
+            'GESTIONEOPERATORI'        : 'Gestione Operatori',
+            'GESTIONEANALISI'        : 'Gestione Analisi',
+            'DISPOSITIVI'        : 'Dispositivi',
+            'TABELLE'        : 'Tabelle',
             'ECOMMERCE'   : 'E-Ticaret',
             'ACADEMY'     : 'Akademi',
             'MAIL'        : {

@@ -35,6 +35,10 @@ const routes = [
         loadChildren: './e-commerce/e-commerce.module#FuseEcommerceModule'
     },
     {
+        path        : 'operatori',
+        loadChildren: './pannello/gestione_operatori/operatori/operatori.module#FuseOperatoriModule'
+    },
+    {
         path        : 'academy',
         loadChildren: './academy/academy.module#FuseAcademyModule'
     },

@@ -1,20 +1,12 @@
-<table>
-    <tr>
-        <td><b>Context: </b></td><td>{{data['@context']}}</td>
-    </tr>
-    <tr>
-        <td><b>Id: </b></td><td>{{data['@id']}}</td>
-    </tr>
-    <tr>
-        <td><b>Type: </b></td><td>{{data['@type']}}</td>
-    </tr>
-</table>
+<!--
+<div  *ngIf="data">
+
 <br>
 <br>
 <h3>Hydra member</h3>
 <br>
 <br>
-<div *ngIf="data">
+<div>
     <div *ngFor="let member of data['hydra:member']">
         <table>
             <tr>
@@ -46,8 +38,60 @@
 </div>
 <br>
 <br>
+
 <table>
     <tr>
         <td><b>Hydra total items: </b></td><td>{{data['hydra:totalItems']}}</td>
     </tr>
 </table>
+
+</div>-->
+
+
+<div class="example-header">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Descrizione -->
+        <ng-container matColumnDef="descrizione">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Descrizione</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.descrizione}}</mat-cell>
+        </ng-container>
+
+        <!-- Elimina  -->
+        <ng-container matColumnDef="elimina">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Elimina</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.elimina}}</mat-cell>
+        </ng-container>
+
+        <!-- Vista  -->
+        <ng-container matColumnDef="vista">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Vista</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.vista}}</mat-cell>
+        </ng-container>
+
+        <!-- Aggiorna  -->
+        <ng-container matColumnDef="aggiorna">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Aggiorna</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.aggiorna}}</mat-cell>
+        </ng-container>
+
+        <!-- Crea  -->
+        <ng-container matColumnDef="crea">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Crea</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.crea}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
